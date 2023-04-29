@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../CSS/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.LogInController">
+   <VBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" styleClass="logo_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo_text" text="Revolut Fake" />
+   </VBox>
+   <VBox fillWidth="false" layoutX="31.0" layoutY="135.0" maxHeight="-Infinity" prefHeight="250.0" prefWidth="540.0" styleClass="login_form" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+      <Label id="choice-text" text="Account Type" />
+      <ChoiceBox id="acc_selector" prefWidth="150.0" styleClass="account_selector" />
+      <Label id="email_label" text="E-Mail" />
+      <TextField id="email_field" styleClass="text_field" />
+      <Label text="Password" />
+      <TextField id="password_field" styleClass="text_field" />
+      <Button id="login_button" mnemonicParsing="false" text="Submit" />
+      <Label id="error_label" styleClass="error_label" text="Error!" />
+   </VBox>
+</AnchorPane>

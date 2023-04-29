@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="home" stylesheets="@../CSS/Home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.HomeController">
+   <Text fx:id="user_name" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="username" text="Hello, -nume-" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0" />
+   <Label fx:id="login_date" layoutX="658.0" layoutY="14.0" styleClass="date" text="-Data-" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0" />
+   <Text layoutX="26.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Account Balance" AnchorPane.leftAnchor="20.0" />
+   <Text layoutX="450.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Account Summary" AnchorPane.rightAnchor="115.6064453125" />
+   <Pane layoutX="20.0" layoutY="106.0" prefHeight="120.0" prefWidth="230.0" AnchorPane.leftAnchor="20.0">
+      <styleClass>
+         <String fx:value="account" />
+         <String fx:value="acc_balance_color" />
+      </styleClass>
+      <FontAwesomeIconView glyphName="CREDIT_CARD" layoutX="190.0" layoutY="40.0" size="30" />
+      <AnchorPane prefHeight="120.0" prefWidth="180.0">
+         <Label fx:id="balance" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="134.0" styleClass="acc_balance_sum" text="-Suma-" />
+      </AnchorPane>
+   </Pane>
+   <Pane layoutX="480.0" layoutY="106.0" prefHeight="120.0" prefWidth="230.0" AnchorPane.rightAnchor="20.0">
+      <styleClass>
+         <String fx:value="account" />
+         <String fx:value="acc_balance_color" />
+      </styleClass>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="5.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <FontAwesomeIconView glyphName="LINE_CHART" layoutX="165.0" layoutY="41.0" size="30" />
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income:" />
+      <Label fx:id="income_label" layoutX="36.0" layoutY="36.0" styleClass="acc_summary_income" text="-Suma-" />
+      <Text layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expenses:" />
+      <Label fx:id="expense_label" layoutX="36.0" layoutY="88.0" styleClass="acc_summary_expenses" text="-Suma-" />
+   </Pane>
+   <Text layoutX="20.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Last Transactions" AnchorPane.leftAnchor="20.0" />
+   <Pane layoutX="20.0" layoutY="259.0" prefHeight="210.0" prefWidth="350.0" styleClass="transaction_list" AnchorPane.leftAnchor="20.0">
+      <ListView fx:id="transaction_list" layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="280.0" />
+      <FontAwesomeIconView glyphName="LIST" layoutX="306.0" layoutY="40.0" size="30" />
+   </Pane>
+</AnchorPane>

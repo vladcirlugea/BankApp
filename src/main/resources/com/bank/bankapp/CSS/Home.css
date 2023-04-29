@@ -1,0 +1,98 @@
+.home{
+    -fx-background-color: #EEEEEE;
+}
+
+.username{
+    -fx-font-size: 2em;
+    -fx-font-family: "Gill Sans MT";
+    -fx-text-fill: #000000;
+}
+
+.date{
+    -fx-text-fill: #000000;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Gill Sans MT";
+}
+
+.subtitles{
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Gill Sans MT";
+}
+
+/*Account Balance*/
+.acc_balance{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10 0 0 10;
+    -fx-padding: 10 0 10 0;
+    -fx-alignment: center;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #DDDDDD;
+    -fx-spacing: 10;
+}
+
+.account{
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 10, 0, 0, 10);
+}
+
+.account Text{
+    -fx-fill: #FFFFFF;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.5em;
+}
+
+.account FontAwesomeIconView{
+    -fx-fill: #FFFFFF;
+}
+
+.acc_balance_color{
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
+}
+
+.acc_balance_sum{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 3em;
+    -fx-font-weight: bold;
+}
+
+/*Account Summary*/
+.acc_summary{
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 5, 10, 5, 10;
+    -fx-spacing: 5;
+    -fx-alignment: center-left;
+}
+
+.acc_summary_container{
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+    -fx-border-radius: 10;
+    -fx-border-color: #999999;
+    -fx-border-width: 1;
+}
+
+.acc_summary_income{
+    -fx-fill: #31F72A;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.5em;
+}
+
+.acc_summary_expenses{
+    -fx-text-fill: #AA0000;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.5em;
+}
+
+/*Last Transactions*/
+.transaction_list{
+    -fx-background-color: #EEEEEE;
+    -fx-border-width: 0 0 0 0;
+    -fx-border-color: #AAAAAA;
+}
+
+.list_cell{
+    -fx-background-color: #EEEEEE;
+    -fx-padding: 15 0 15 0;
+}

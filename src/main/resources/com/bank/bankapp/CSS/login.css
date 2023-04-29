@@ -1,0 +1,66 @@
+.login_container{
+    -fx-background-color: #EEEEEE;
+}
+
+.logo_container{
+    -fx-background-color: #728FCE;
+    -fx-alignment: center;
+}
+
+.logo_text{
+    -fx-font-size: 2em;
+    -fx-fill: #0C090A;
+    -fx-font-weight: bold;
+}
+
+.account_selector{
+    -fx-background-color: #ecf39e;
+}
+
+#choice-text{
+    -fx-font-weight: 400;
+}
+
+.account_selector .label{
+    -fx-text-fill: #728FCE;
+    -fx-font-size: 1.5em;
+}
+
+.account_selector .arrow{
+    -fx-background-color: #728FCE;
+}
+
+#choice-box-popup-menu{
+    -fx-background-color: #ecf39e;
+}
+
+.login_form{
+    -fx-spacing: 10;
+}
+
+.login_form Label{
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.text_field{
+    -fx-background-color: #FFFFFF;
+    -fx-height: 15;
+    -fx-width: 270;
+    -fx-font-size: 1.5em;
+}
+
+.login_form Button{
+    -fx-background-color: #728FCE;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.5em;
+}
+
+.login_form Button:hover{
+    -fx-cursor: hand;
+}
+
+.error_label{
+    -fx-text-fill: #FF0000;
+    -fx-font-size: 1.2em;
+}
