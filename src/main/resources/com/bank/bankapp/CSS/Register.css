@@ -1,0 +1,58 @@
+.register_container{
+    -fx-background-color: #FFFFFF;
+    -fx-spacing: 15;
+    -fx-alignment: center;
+}
+
+.register_form_title{
+    -fx-alignment: center;
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
+}
+
+.register_form_title Text{
+    -fx-font-size: 2em;
+    -fx-font-family: "Gill Sans MT";
+    -fx-fill: #000000;
+}
+
+.register_form{
+    -fx-background-color: #EDEDED;
+    -fx-spacing: 10;
+    -fx-padding: 0 0 10 0;
+}
+
+.register_form Label{
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Gill Sans MT";
+}
+
+.register_form Text_Field{
+    -fx-pref-width: 100;
+    -fx-font-family: "Gill Sans MT";
+}
+
+.register_form Button:hover{
+    -fx-cursor: hand;
+}
+
+.button_container{
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-background-color: #EDEDED;
+}
+
+.button_container Button{
+    -fx-pref-width: 100;
+    -fx-pref-height: 30;
+    -fx-text-fill: #000000;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.5em;
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
+}
+
+.text_field{
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 30;
+    -fx-pref-width: 200;
+    -fx-font-size: 1.5em;
+}

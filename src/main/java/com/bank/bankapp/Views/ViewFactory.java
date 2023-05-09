@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 public class ViewFactory {
     private AnchorPane homeView;
+    private AnchorPane logInView;
     public ViewFactory(){}
     public AnchorPane getHomeView(){
         if(homeView == null){
@@ -25,6 +26,12 @@ public class ViewFactory {
     }
     public void showClientWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Client.fxml"));
+        ClientController clientController = new ClientController();
+        loader.setController(clientController);
+        createStage(loader);
+    }
+    public void showRegisterWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Register.fxml"));
         ClientController clientController = new ClientController();
         loader.setController(clientController);
         createStage(loader);

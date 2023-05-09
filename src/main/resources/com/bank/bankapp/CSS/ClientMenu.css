@@ -33,8 +33,8 @@
 .menu_container Button{
     -fx-pref-height: 40;
     -fx-pref-width: 145;
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #728FCE;
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
+    -fx-text-fill: #000000;
     -fx-font-size: 1.2em;
     -fx-alignment: center_left;
     -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 4);
@@ -51,8 +51,8 @@
 .secondary_menu_button{
     -fx-pref-width: 120;
     -fx-pref-height: 40;
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #728FCE;
+    -fx-background-color: linear-gradient(to right, #F89292, #FE6565);
+    -fx-text-fill: #000000;
     -fx-font-size: 1.2em;
     -fx-alignment: center_left;
 }

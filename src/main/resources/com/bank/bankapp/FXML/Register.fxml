@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="register_container" stylesheets="@../CSS/Register.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox prefHeight="50.0" prefWidth="100.0" styleClass="register_form_title" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account" />
+   </VBox>
+   <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="73.0" prefHeight="280.0" prefWidth="380.0" styleClass="register_form">
+      <Label id="first_name_label" text="First Name" />
+      <TextField id="first_name_text_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="text_field" />
+      <Label id="surname_label" text="Surname" />
+      <TextField id="surname_text_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="text_field" />
+      <Label id="phone_label" text="Phone Number" />
+      <TextField id="phone_text_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="text_field" />
+      <Label id="email_label" text="E-mail Address" />
+      <TextField id="email_text_field" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="text_field" />
+   </VBox>
+   <HBox layoutX="10.0" layoutY="363.0" prefHeight="70.0" prefWidth="380.0" styleClass="button_container" AnchorPane.bottomAnchor="166.60000000000002" AnchorPane.leftAnchor="10.0">
+      <Button id="back_button" mnemonicParsing="false" text="Back" />
+      <Button id="register_button" mnemonicParsing="false" text="Register" />
+   </HBox>
+</AnchorPane>

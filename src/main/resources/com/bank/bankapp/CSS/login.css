@@ -3,7 +3,7 @@
 }
 
 .logo_container{
-    -fx-background-color: #728FCE;
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
     -fx-alignment: center;
 }
 
@@ -35,11 +35,15 @@
 }
 
 .login_form{
-    -fx-spacing: 10;
+    -fx-spacing: 15;
 }
 
 .login_form Label{
     -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.bold_text{
     -fx-font-weight: bold;
 }
 
@@ -51,9 +55,9 @@
 }
 
 .login_form Button{
-    -fx-background-color: #728FCE;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: #000000;
     -fx-font-size: 1.5em;
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
 }
 
 .login_form Button:hover{
@@ -63,4 +67,9 @@
 .error_label{
     -fx-text-fill: #FF0000;
     -fx-font-size: 1.2em;
+}
+
+.notAClient_link{
+    -fx-font-family: "Gill Sans MT";
+    -fx-alignment: center_right;
 }
