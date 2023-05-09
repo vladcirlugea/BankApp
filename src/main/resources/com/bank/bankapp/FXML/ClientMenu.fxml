@@ -19,9 +19,14 @@
                <FontAwesomeIconView glyphName="HOME" size="25" />
             </graphic>
          </Button>
+         <Button id="transfer_button" mnemonicParsing="false" text="Transfer Money">
+            <graphic>
+               <FontAwesomeIconView glyphName="EXCHANGE" size="22" />
+            </graphic>
+         </Button>
          <Button id="transactions_button" mnemonicParsing="false" text="Transactions">
             <graphic>
-               <FontAwesomeIconView glyphName="EXCHANGE" size="25" />
+               <FontAwesomeIconView glyphName="HISTORY" size="25" />
             </graphic>
          </Button>
          <Line endX="145.0" />

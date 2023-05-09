@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 public class ClientMenuController implements Initializable {
     public Button home_button;
+    public Button transfer_button;
     public Button transactions_button;
     public Button logout_button;
     @Override

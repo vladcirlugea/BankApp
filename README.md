@@ -6,7 +6,7 @@ This app aims to offer an enviorment for bank clients to review their banking ac
 * Java 19
 * Java FX
 * Maven
-* MongoDB (Database)
+* MongoDB (Database) / Nitrite ?
 
 ## Registration
 The user needs to first register an account having two options:
