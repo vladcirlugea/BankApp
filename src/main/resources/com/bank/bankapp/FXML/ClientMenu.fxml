@@ -7,29 +7,29 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.ClientMenuController">
    <AnchorPane prefHeight="470.0" prefWidth="130.0" styleClass="left_menu">
       <VBox prefHeight="100.0" prefWidth="110.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revolut Fake" />
          <FontAwesomeIconView glyphName="MONEY" size="30" />
       </VBox>
       <VBox prefHeight="300.0" prefWidth="100.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-         <Button id="home_button" mnemonicParsing="false" text="Home">
+         <Button id="home_button" fx:id="home_button" mnemonicParsing="false" text="Home">
             <graphic>
                <FontAwesomeIconView glyphName="HOME" size="25" />
             </graphic>
          </Button>
-         <Button id="transfer_button" mnemonicParsing="false" text="Transfer Money">
+         <Button id="transfer_button" fx:id="transfer_money_button" mnemonicParsing="false" text="Transfer Money">
             <graphic>
                <FontAwesomeIconView glyphName="EXCHANGE" size="22" />
             </graphic>
          </Button>
-         <Button id="transactions_button" mnemonicParsing="false" text="Transactions">
+         <Button id="transactions_button" fx:id="transactions_button" mnemonicParsing="false" text="Transactions">
             <graphic>
                <FontAwesomeIconView glyphName="HISTORY" size="25" />
             </graphic>
          </Button>
-         <Button mnemonicParsing="false" text="Account Details">
+         <Button fx:id="account_details_button" mnemonicParsing="false" text="Account Details">
             <graphic>
                <FontAwesomeIconView glyphName="USER" size="22" />
             </graphic>

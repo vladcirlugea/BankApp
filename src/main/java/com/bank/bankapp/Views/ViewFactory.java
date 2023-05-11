@@ -32,8 +32,6 @@ public class ViewFactory {
     }
     public void showRegisterWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Register.fxml"));
-        ClientController clientController = new ClientController();
-        loader.setController(clientController);
         createStage(loader);
     }
 

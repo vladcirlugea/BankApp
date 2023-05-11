@@ -50,9 +50,17 @@
     -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
 }
 
+.button_container Button:hover{
+    -fx-cursor: hand;
+}
+
 .text_field{
     -fx-background-color: #FFFFFF;
     -fx-pref-height: 30;
     -fx-pref-width: 200;
     -fx-font-size: 1.5em;
+}
+
+.register_form DatePicker:hover{
+    -fx-cursor: hand;
 }

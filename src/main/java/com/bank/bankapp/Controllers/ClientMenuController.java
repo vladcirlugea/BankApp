@@ -12,15 +12,17 @@ import java.util.ResourceBundle;
 
 public class ClientMenuController implements Initializable {
     public Button home_button;
-    public Button transfer_button;
     public Button transactions_button;
     public Button logout_button;
+    public Button transfer_money_button;
+    public Button account_details_button;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         logout_button.setOnAction(event -> onLogOut());
     }
     private void onLogOut(){
-        Stage stage = (Stage)home_button.getScene().getWindow();
+        Stage stage = (Stage)logout_button.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
         Model.getInstance().getViewFactory().showLogInWindow();
     }
