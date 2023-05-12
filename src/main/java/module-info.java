@@ -4,6 +4,8 @@ module com.bank.bankapp {
     requires java.sql;
     requires de.jensd.fx.glyphs.fontawesome;
     requires org.mongodb.driver.sync.client;
+    requires org.mongodb.driver.core;
+    requires org.mongodb.bson;
 
     opens com.bank.bankapp to javafx.fxml;
     exports com.bank.bankapp;

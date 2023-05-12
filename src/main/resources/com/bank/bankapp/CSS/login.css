@@ -32,10 +32,14 @@
 
 #choice-box-popup-menu{
     -fx-background-color: #ecf39e;
+    -fx-font-family: "Gill Sans MT";
+    -fx-fill: #000000;
+    -fx-font-weight: bold;
 }
 
 .login_form{
     -fx-spacing: 15;
+    -fx-padding: 0 0 0 10;
 }
 
 .login_form Label{
@@ -67,6 +71,10 @@
 .error_label{
     -fx-text-fill: #FF0000;
     -fx-font-size: 1.2em;
+}
+
+.error_label FontAwesomeIconView{
+    -fx-fill: #FF0000;
 }
 
 .notAClient_link{

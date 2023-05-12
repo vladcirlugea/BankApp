@@ -5,6 +5,7 @@ This app aims to offer an enviorment for bank clients to review their banking ac
 ## Tehnologies used
 * Java 19
 * Java FX
+* SceneBuilder
 * Maven
 * MongoDB (Database) / Nitrite ?
 
