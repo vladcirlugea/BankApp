@@ -35,7 +35,7 @@ public class LogInController implements Initializable {
         String email = email_field.getText();
         String password = password_field.getText();
 
-        String connectionString = "mongodb+srv://test:proiectfis@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
+        String connectionString = "mongodb+srv://test:<password>@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
         try(var mongoClient = MongoClients.create(connectionString)){
             MongoDatabase database = mongoClient.getDatabase("BankApp");
             MongoCollection<Document> collection = database.getCollection("BankAppCollection");
