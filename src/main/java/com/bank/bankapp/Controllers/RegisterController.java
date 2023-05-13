@@ -84,7 +84,7 @@ public class RegisterController implements Initializable {
             e.printStackTrace();
         }
 
-        String connectionString = "mongodb+srv://test:proiectfis@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
+        String connectionString = "mongodb+srv://test:<password>@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
         ServerApi serverApi = ServerApi.builder().version(ServerApiVersion.V1).build();
         MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(new ConnectionString(connectionString)).serverApi(serverApi).build();
 
