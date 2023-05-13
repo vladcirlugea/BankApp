@@ -64,6 +64,17 @@ public class RegisterController implements Initializable {
         ZonedDateTime zonedDateCreated = LocalDate.now().atStartOfDay(ZoneId.systemDefault());
         Date dateCreated = Date.from(zonedDateCreated.toInstant());
 
+        if(!RegisterChecker.isEmailValid(email)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid E-mail format!");
+            alert.showAndWait();
+            return;
+        }
+        if(RegisterChecker.isBankEmail(email)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Unauthorized E-mail!");
+            alert.showAndWait();
+            return;
+        }
+
         String hashedPassword = null;
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -87,7 +98,9 @@ public class RegisterController implements Initializable {
                     .append("Email", email)
                     .append("Password", hashedPassword)
                     .append("Birthday", birthdayDate)
-                    .append("DateCreated", dateCreated);
+                    .append("DateCreated", dateCreated)
+                    .append("AccountBalance", 0)
+                    .append("AccountType", "Client");
             collection.insertOne(doc);
             mongoClient.close();
         } catch (Exception e){

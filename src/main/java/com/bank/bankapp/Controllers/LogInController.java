@@ -30,6 +30,7 @@ public class LogInController implements Initializable {
         login_button.setOnAction(event -> onLogIn());
         notAClient_link.setOnAction(event -> onRegister());
         error_label.setVisible(false);
+        acc_selector.setValue("Client");
     }
     private void onLogIn(){
         String email = email_field.getText();
@@ -45,9 +46,16 @@ public class LogInController implements Initializable {
             if(userDocument != null){
                 String hashedPassword = userDocument.getString("Password");
                 if(hashedPassword.equals(getHashedPassword(password))){
-                    Stage stage = (Stage)login_button.getScene().getWindow();
-                    Model.getInstance().getViewFactory().closeStage(stage);
-                    Model.getInstance().getViewFactory().showClientWindow();
+                    if(acc_selector.getValue().equals("Client")) {
+                        Stage stage = (Stage) login_button.getScene().getWindow();
+                        Model.getInstance().getViewFactory().closeStage(stage);
+                        Model.getInstance().getViewFactory().showClientWindow();
+                    }
+                    else if(acc_selector.getValue().equals("Admin")){
+                        Stage stage = (Stage) login_button.getScene().getWindow();
+                        Model.getInstance().getViewFactory().closeStage(stage);
+                        Model.getInstance().getViewFactory().showAdminWindow();
+                    }
                 }
                 else{
                     error_label.setVisible(true);

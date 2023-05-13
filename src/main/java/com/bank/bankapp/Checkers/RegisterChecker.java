@@ -23,4 +23,10 @@ public class RegisterChecker {
         }
         return true;
     }
+    public static boolean isEmailValid(String email){
+        return email.matches("^[\\w-_.+]*[\\w-_.]@[\\w]+([\\w-]+\\.)+[\\w-]{2,}$");
+    }
+    public static boolean isBankEmail(String email){
+        return email.endsWith("@bank.com");
+    }
 }

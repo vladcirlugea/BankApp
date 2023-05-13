@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.AdminMenuController">
     <AnchorPane prefHeight="470.0" prefWidth="130.0" styleClass="left_menu">
         <VBox prefHeight="100.0" prefWidth="110.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revolut Fake" />
@@ -28,7 +28,7 @@
                <FontAwesomeIconView glyphName="SEARCH" size="25" />
             </graphic></Button>
             <Line endX="145.0" />
-            <Button id="logout_button" fx:id="logout_button" mnemonicParsing="false" styleClass="secondary_menu_button" text="Logout">
+            <Button fx:id="logout_button" mnemonicParsing="false" styleClass="secondary_menu_button" text="Logout">
             <graphic>
                <FontAwesomeIconView glyphName="SIGN_OUT" size="25" />
             </graphic></Button>

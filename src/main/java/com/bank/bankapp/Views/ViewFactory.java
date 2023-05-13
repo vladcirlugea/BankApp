@@ -30,6 +30,12 @@ public class ViewFactory {
         loader.setController(clientController);
         createStage(loader);
     }
+    public void showAdminWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Admin.fxml"));
+        ClientController clientController = new ClientController();
+        loader.setController(clientController);
+        createStage(loader);
+    }
     public void showRegisterWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Register.fxml"));
         createStage(loader);

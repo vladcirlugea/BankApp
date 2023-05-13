@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="home" stylesheets="@../CSS/HomeAdmin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.HomeAdminController">
+   <children>
+      <Text fx:id="username_text" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="username" text="Hello, Admin!" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="date_label" styleClass="date" text="-Data-" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0" />
+      <Text layoutX="20.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Client Database Information" AnchorPane.leftAnchor="20.0" />
+      <Pane layoutX="23.0" layoutY="90.0" prefHeight="120.0" prefWidth="350.0" AnchorPane.leftAnchor="20.0">
+         <styleClass>
+            <String fx:value="acc_balance_color" />
+            <String fx:value="account" />
+         </styleClass>
+         <Text fx:id="nrOfClients_text" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Clients:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Text>
+         <Text fx:id="totalMoney_text" layoutX="14.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Clients' Money:" />
+         <Line endX="229.39999389648438" layoutX="121.0" layoutY="60.0" startX="-121.00000762939453" />
+         <Text fx:id="nrOfAdmins_text" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Number of Admins:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Text>
+      </Pane>
+      <Text layoutX="20.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Latest Accounts Created" />
+      <Pane layoutX="23.0" layoutY="259.0" prefHeight="120.0" prefWidth="350.0" AnchorPane.leftAnchor="20.0">
+         <styleClass>
+            <String fx:value="account" />
+            <String fx:value="acc_balance_color" />
+         </styleClass>
+      </Pane>
+   </children>
+</AnchorPane>
