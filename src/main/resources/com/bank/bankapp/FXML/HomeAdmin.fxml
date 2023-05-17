@@ -23,13 +23,16 @@
                <Font name="System Bold" size="12.0" />
             </font>
          </Text>
-         <Text fx:id="totalMoney_text" layoutX="14.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Clients' Money:" />
+         <Text fx:id="totalMoney_text" layoutX="14.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Total Clients' Money:" />
          <Line endX="229.39999389648438" layoutX="121.0" layoutY="60.0" startX="-121.00000762939453" />
          <Text fx:id="nrOfAdmins_text" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Number of Admins:">
             <font>
                <Font name="System Bold" size="12.0" />
             </font>
          </Text>
+         <Label fx:id="nrOfClients_label" layoutX="242.0" layoutY="6.0" styleClass="data" text="Label" />
+         <Label fx:id="nrOfAdmins_label" layoutX="242.0" layoutY="34.0" styleClass="data" text="Label" />
+         <Label fx:id="totalMoney_label" layoutX="242.0" layoutY="69.0" styleClass="data" text="Label" />
       </Pane>
       <Text layoutX="20.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitles" text="Latest Accounts Created" />
       <Pane layoutX="23.0" layoutY="259.0" prefHeight="120.0" prefWidth="350.0" AnchorPane.leftAnchor="20.0">

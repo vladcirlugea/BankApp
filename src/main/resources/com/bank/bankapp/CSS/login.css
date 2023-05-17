@@ -1,5 +1,5 @@
 .login_container{
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
 }
 
 .logo_container{
@@ -15,6 +15,7 @@
 
 .account_selector{
     -fx-background-color: #ecf39e;
+    -fx-cursor: hand;
 }
 
 #choice-text{
@@ -56,6 +57,7 @@
     -fx-height: 15;
     -fx-width: 270;
     -fx-font-size: 1.5em;
+    -fx-font-family: "Gill Sans MT";
 }
 
 .login_form Button{

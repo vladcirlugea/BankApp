@@ -1,5 +1,5 @@
 .register_container{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
     -fx-spacing: 15;
     -fx-alignment: center;
 }

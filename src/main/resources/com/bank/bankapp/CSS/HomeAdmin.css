@@ -1,5 +1,5 @@
 .home{
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
 }
 
 .username{
@@ -85,6 +85,13 @@
     -fx-text-fill: #AA0000;
     -fx-font-family: "Gill Sans MT";
     -fx-font-size: 1.5em;
+}
+
+.data{
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
 }
 
 /*Last Transactions*/

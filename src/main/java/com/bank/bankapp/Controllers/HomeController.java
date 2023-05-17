@@ -1,11 +1,17 @@
 package com.bank.bankapp.Controllers;
 
+import com.bank.bankapp.Models.Client;
+import com.bank.bankapp.Models.Model;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import com.mongodb.client.MongoClients;
+import org.bson.Document;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,5 +30,7 @@ public class HomeController implements Initializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formattedDate = currentDate.format(formatter);
         login_date.setText(formattedDate);
+
+
     }
 }

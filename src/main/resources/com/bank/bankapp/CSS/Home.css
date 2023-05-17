@@ -1,5 +1,5 @@
 .home{
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
 }
 
 .username{

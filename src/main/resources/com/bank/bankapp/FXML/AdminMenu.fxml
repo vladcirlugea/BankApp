@@ -15,15 +15,15 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="~Admin~" />
         </VBox>
         <VBox prefHeight="300.0" prefWidth="100.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-            <Button id="home_button" fx:id="home_button" mnemonicParsing="false" text="Home">
+            <Button fx:id="home_button" mnemonicParsing="false" text="Home">
             <graphic>
                <FontAwesomeIconView glyphName="HOME" size="25" />
             </graphic></Button>
-            <Button id="add_money_button" fx:id="add_money_button" mnemonicParsing="false" text="Add Money to Client">
+            <Button fx:id="add_money" mnemonicParsing="false" text="Add Money to Client">
             <graphic>
                <FontAwesomeIconView glyphName="PLUS" size="25" />
             </graphic></Button>
-            <Button id="search_button" fx:id="search_button" mnemonicParsing="false" text="Search Client">
+            <Button fx:id="search_button" mnemonicParsing="false" text="Search Client">
             <graphic>
                <FontAwesomeIconView glyphName="SEARCH" size="25" />
             </graphic></Button>

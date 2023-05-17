@@ -15,10 +15,7 @@ public class RegisterChecker {
                 email_text_field.getText().isEmpty() ||
                 password_field.getText().isEmpty() ||
                 date_picker.getValue() == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Incomplete fields");
-            alert.setHeaderText("Please complete all fields.");
-            alert.showAndWait();
+            Alert("Incomplete Fields!", "Please complete all fields!");
             return false;
         }
         return true;
@@ -28,5 +25,11 @@ public class RegisterChecker {
     }
     public static boolean isBankEmail(String email){
         return email.endsWith("@bank.com");
+    }
+    public static void Alert(String alertTitle, String header){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(alertTitle);
+        alert.setHeaderText(header);
+        alert.showAndWait();
     }
 }

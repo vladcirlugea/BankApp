@@ -1,0 +1,52 @@
+.main_container{
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
+    -fx-alignment: center;
+}
+
+.title{
+    -fx-font-weight: bold;
+    -fx-font-size: 3em;
+    -fx-text-fill: #000000;
+    -fx-alignment: center;
+}
+
+.add_money_container{
+    -fx-background-color: linear-gradient(to right, #A6CFFE, #728FCE);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 10, 0, 0, 10);
+}
+
+.add_money_form{
+    -fx-spacing: 15;
+    -fx-padding: 10 10 10 10;
+    -fx-alignment: center;
+}
+
+.add_money_form TextField{
+    -fx-pref-height: 35;
+    -fx-pref-width: 250;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Gill Sans MT";
+}
+
+.add_money_form Text{
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #000000;
+}
+
+.send_button{
+    -fx-text-fill: #000000;
+    -fx-font-family: "Gill Sans MT";
+    -fx-font-size: 1.2em;
+    -fx-pref-width: 120;
+    -fx-pref-height: 30;
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
+    -fx-cursor: hand;
+}
+
+.confirmation_label{
+    -fx-alignment: center;
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-font-family: "Gill Sans MT";
+}

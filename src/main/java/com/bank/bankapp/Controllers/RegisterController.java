@@ -2,18 +2,15 @@ package com.bank.bankapp.Controllers;
 
 import com.bank.bankapp.Checkers.RegisterChecker;
 import javafx.scene.control.*;
-import com.bank.bankapp.DBConnection;
 import com.bank.bankapp.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
-import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoException;
 import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 import java.net.URL;
@@ -65,13 +62,11 @@ public class RegisterController implements Initializable {
         Date dateCreated = Date.from(zonedDateCreated.toInstant());
 
         if(!RegisterChecker.isEmailValid(email)){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid E-mail format!");
-            alert.showAndWait();
+            RegisterChecker.Alert("Invalid E-Mail!", "Please enter a valid E-Mail format");
             return;
         }
         if(RegisterChecker.isBankEmail(email)){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Unauthorized E-mail!");
-            alert.showAndWait();
+            RegisterChecker.Alert("Unauthorized E-Mail", "Please enter a client E-Mail(The E-Mail can't end with: '@bank.com')");
             return;
         }
 
@@ -84,7 +79,7 @@ public class RegisterController implements Initializable {
             e.printStackTrace();
         }
 
-        String connectionString = "mongodb+srv://test:<password>@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
+        String connectionString = "mongodb+srv://test:proiectfis@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
         ServerApi serverApi = ServerApi.builder().version(ServerApiVersion.V1).build();
         MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(new ConnectionString(connectionString)).serverApi(serverApi).build();
 
@@ -99,7 +94,7 @@ public class RegisterController implements Initializable {
                     .append("Password", hashedPassword)
                     .append("Birthday", birthdayDate)
                     .append("DateCreated", dateCreated)
-                    .append("AccountBalance", 0)
+                    .append("AccountBalance", 0.00)
                     .append("AccountType", "Client");
             collection.insertOne(doc);
             mongoClient.close();
