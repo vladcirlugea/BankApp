@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="60.0" prefWidth="550.0" styleClass="main_container" stylesheets="@../CSS/TransactionDetails.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.TransactionDetailsController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="200.0" styleClass="transaction_details" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Label fx:id="transaction_id" text="ID" />
+            <Label fx:id="date_label" text="19/05/2023" />
+            <Line endX="-100.10712432861328" endY="50.0" startX="-100.0" />
+            <Label fx:id="sender_label" text="Sender" />
+            <FontAwesomeIconView glyphName="ARROW_RIGHT" size="20" />
+            <Label fx:id="receiver_label" text="Receiver" />
+            <Line endX="-100.62136840820312" endY="50.0" startX="-100.0" />
+            <Label fx:id="sum_label" text="Sum" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

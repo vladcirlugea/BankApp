@@ -1,0 +1,15 @@
+.main_container{
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #B5B5B5);
+    -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 7);
+}
+
+.transaction_details{
+    -fx-spacing: 25;
+    -fx-alignment: center;
+}
+
+.transaction_details Label{
+    -fx-font-size: 1.5em;
+    -fx-fill: #000000;
+    -fx-font-family: "Gill Sans MT";
+}

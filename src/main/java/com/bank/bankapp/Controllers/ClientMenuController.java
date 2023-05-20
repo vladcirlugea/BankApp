@@ -19,11 +19,22 @@ public class ClientMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        addListeners();
         logout_button.setOnAction(event -> onLogOut());
+    }
+    private void addListeners(){
+        home_button.setOnAction(event -> onHome());
+        transfer_money_button.setOnAction(event -> onTransfer());
     }
     private void onLogOut(){
         Stage stage = (Stage)logout_button.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
         Model.getInstance().getViewFactory().showLogInWindow();
+    }
+    private void onHome(){
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Home");
+    }
+    private void onTransfer(){
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transfer");
     }
 }

@@ -1,5 +1,6 @@
 package com.bank.bankapp.Controllers;
 
+import com.bank.bankapp.Models.UserSession;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerApi;
@@ -12,13 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.bson.Document;
+import org.w3c.dom.events.DocumentEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-public class AddMoneyController implements Initializable {
-    public TextField email_text_field;
-    public TextField amount_text_field;
+public class TransferMoneyController implements Initializable {
+    public TextField email_text;
+    public TextField amount_text;
     public Button send_money_button;
     public Label confirmation_label;
     @Override
@@ -27,8 +28,9 @@ public class AddMoneyController implements Initializable {
         send_money_button.setOnAction(event -> onSend());
     }
     public void onSend(){
-        String email = email_text_field.getText();
-        double amount = Double.parseDouble(amount_text_field.getText());
+        String email = email_text.getText();
+        double amount = Double.parseDouble(amount_text.getText());
+        String senderEmail = UserSession.getInstance().getUserEmail();
 
         String connectionString = "mongodb+srv://test:proiectfis@cluster.e4scrjt.mongodb.net/?retryWrites=true&w=majority";
         ServerApi serverApi = ServerApi.builder().version(ServerApiVersion.V1).build();
@@ -37,8 +39,14 @@ public class AddMoneyController implements Initializable {
         try(var mongoClient = MongoClients.create(settings)){
             MongoDatabase database = mongoClient.getDatabase("BankApp");
             MongoCollection<Document> collection = database.getCollection("BankAppCollection");
+            MongoCollection<Document> transactionsCollection = database.getCollection("Transactions");
 
             Document filter = new Document("Email", email);
+            Document senderFilter = new Document("Email", senderEmail);
+
+            Document senderDocument = collection.find(senderFilter).first();
+            double senderBalance = senderDocument.getDouble("AccountBalance");
+
             long count = collection.countDocuments(filter);
             if(count == 0){
                 confirmation_label.setText("Email not found!");
@@ -46,16 +54,26 @@ public class AddMoneyController implements Initializable {
                 confirmation_label.setVisible(true);
                 return;
             }
+
+            if(senderBalance < amount){
+                confirmation_label.setText("Insufficient funds!");
+                confirmation_label.setStyle("-fx-text-fill: #E72525; -fx-font-family: 'Gill Sans MT'; -fx-font-weight: bold; -fx-font-size: 1.5em; -fx-alignment: center");
+                confirmation_label.setVisible(true);
+                return;
+            }
+
+            Document updateSender = new Document("$inc", new Document("AccountBalance", -amount));
+            collection.updateOne(senderFilter, updateSender);
             Document update = new Document("$inc", new Document("AccountBalance", amount));
             collection.updateOne(filter, update);
             confirmation_label.setText("Money sent successfully!");
             confirmation_label.setStyle("-fx-text-fill: #32E320; -fx-font-family: 'Gill Sans MT'; -fx-font-weight: bold; -fx-font-size: 1.5em; -fx-alignment: center");
             confirmation_label.setVisible(true);
-            email_text_field.setText("");
-            amount_text_field.setText("");
+            email_text.setText("");
+            amount_text.setText("");
 
             mongoClient.close();
-        } catch(Exception e){
+        } catch (Exception e){
             e.printStackTrace();
         }
     }

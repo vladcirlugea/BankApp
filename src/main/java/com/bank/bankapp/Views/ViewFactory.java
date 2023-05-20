@@ -11,18 +11,23 @@ import javafx.stage.Stage;
 
 public class ViewFactory {
     //Client fields
+    private final StringProperty clientSelectedMenuItem;
     private AnchorPane homeView;
+    private AnchorPane transferView;
     //Admin Fields
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane adminHomeView;
     private AnchorPane addMoneyView;
     public ViewFactory(){
+        this.clientSelectedMenuItem = new SimpleStringProperty("");
         this.adminSelectedMenuItem = new SimpleStringProperty("");
     }
     public StringProperty getAdminSelectedMenuItem(){
         return adminSelectedMenuItem;
     }
-
+    public StringProperty getClientSelectedMenuItem(){
+        return clientSelectedMenuItem;
+    }
     //Client Methods
     public AnchorPane getHomeView(){
         if(homeView == null){
@@ -33,6 +38,16 @@ public class ViewFactory {
             }
         }
         return homeView;
+    }
+    public AnchorPane getTransferView(){
+        if(transferView == null){
+            try{
+                transferView = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/TransferMoney.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return transferView;
     }
 
     //Admin Methods

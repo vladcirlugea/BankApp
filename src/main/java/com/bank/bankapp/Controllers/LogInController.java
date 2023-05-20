@@ -2,6 +2,7 @@ package com.bank.bankapp.Controllers;
 
 import com.bank.bankapp.Checkers.RegisterChecker;
 import com.bank.bankapp.Models.Model;
+import com.bank.bankapp.Models.UserSession;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -48,6 +49,7 @@ public class LogInController implements Initializable {
                     String hashedPassword = userDocument.getString("Password");
                     if (hashedPassword.equals(getHashedPassword(password))) {
                         if (acc_selector.getValue().equals("Client")) {
+                            UserSession.getInstance().setUserEmail(email);
                             Stage stage = (Stage) login_button.getScene().getWindow();
                             Model.getInstance().getViewFactory().closeStage(stage);
                             Model.getInstance().getViewFactory().showClientWindow();
@@ -72,7 +74,6 @@ public class LogInController implements Initializable {
             }else{
                 RegisterChecker.Alert("No Account Type", "Please select an account type");
             }
-
         } catch(Exception e){
             e.printStackTrace();
         }
