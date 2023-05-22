@@ -1,5 +1,5 @@
 .main_container{
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to right, #B5B5B5, #FFFFFF);
     -fx-alignment: center;
     -fx-padding: 0 10 0 10;
 }
@@ -8,10 +8,11 @@
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(two-pass-box, #AAAAAA, 5, 0, 0, 4);
+    -fx-background-color: linear-gradient(to right, #B5B5B5, #FFFFFF);
 }
 
 .title_container{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: linear-gradient(to right, #B5B5B5, #FFFFFF);
     -fx-background-radius: 20 20 0 0;
     -fx-alignment: top_center;
     -fx-padding: 10;

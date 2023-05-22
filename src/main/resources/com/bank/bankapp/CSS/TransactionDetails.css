@@ -4,12 +4,12 @@
 }
 
 .transaction_details{
-    -fx-spacing: 25;
+    -fx-spacing: 20;
     -fx-alignment: center;
 }
 
 .transaction_details Label{
-    -fx-font-size: 1.5em;
+    -fx-font-size: 1.2em;
     -fx-fill: #000000;
     -fx-font-family: "Gill Sans MT";
 }

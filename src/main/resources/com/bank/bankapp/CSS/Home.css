@@ -74,7 +74,7 @@
 }
 
 .acc_summary_income{
-    -fx-fill: #31F72A;
+    -fx-text-fill: #33AB0E;
     -fx-font-family: "Gill Sans MT";
     -fx-font-size: 1.5em;
 }

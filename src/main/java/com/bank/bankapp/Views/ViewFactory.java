@@ -14,6 +14,8 @@ public class ViewFactory {
     private final StringProperty clientSelectedMenuItem;
     private AnchorPane homeView;
     private AnchorPane transferView;
+    private AnchorPane accoountDetailsView;
+    private AnchorPane transactionsHistory;
     //Admin Fields
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane adminHomeView;
@@ -48,6 +50,26 @@ public class ViewFactory {
             }
         }
         return transferView;
+    }
+    public AnchorPane getAccountDetailsView(){
+        if(accoountDetailsView == null){
+            try{
+                accoountDetailsView = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/AccountDetails.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return accoountDetailsView;
+    }
+    public AnchorPane getTransactionsHistory(){
+        if(transactionsHistory == null){
+            try{
+                transactionsHistory = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/TransactionHistory.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return transactionsHistory;
     }
 
     //Admin Methods

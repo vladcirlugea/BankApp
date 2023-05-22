@@ -12,6 +12,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -48,6 +49,10 @@ public class HomeAdminController implements Initializable {
 
             totalMoney = collection.aggregate(Arrays.asList(Aggregates.group(null, Accumulators.sum("total", "$AccountBalance")))).first().getDouble("total");
             totalMoney_label.setText(Double.toString(totalMoney) + "$");
+
+            DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+            String formattedTotalMoney = decimalFormat.format(totalMoney);
+            totalMoney_label.setText(formattedTotalMoney + "$");
 
             mongoClient.close();
         } catch (Exception e){

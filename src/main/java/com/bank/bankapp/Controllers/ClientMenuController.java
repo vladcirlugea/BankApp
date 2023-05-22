@@ -25,6 +25,8 @@ public class ClientMenuController implements Initializable {
     private void addListeners(){
         home_button.setOnAction(event -> onHome());
         transfer_money_button.setOnAction(event -> onTransfer());
+        account_details_button.setOnAction(event -> onAccountDetails());
+        transactions_button.setOnAction(event -> onTransactionHistory());
     }
     private void onLogOut(){
         Stage stage = (Stage)logout_button.getScene().getWindow();
@@ -36,5 +38,11 @@ public class ClientMenuController implements Initializable {
     }
     private void onTransfer(){
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transfer");
+    }
+    private void onAccountDetails(){
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Account Details");
+    }
+    private void onTransactionHistory(){
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transaction History");
     }
 }
