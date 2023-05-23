@@ -14,7 +14,6 @@ public class Transaction {
     private String receiver;
     private double amount;
 
-    // Constructor
     public Transaction(String sender, String receiver, double amount, LocalDate date, String id) {
         this.sender = sender;
         this.receiver = receiver;

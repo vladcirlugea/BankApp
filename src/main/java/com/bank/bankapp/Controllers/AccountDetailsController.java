@@ -53,6 +53,7 @@ public class AccountDetailsController implements Initializable {
                 phone_number.setText("Phone Number: " + phoneNumber);
                 date_created.setText("Date Created: " + formattedDate);
             }
+            mongoClient.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

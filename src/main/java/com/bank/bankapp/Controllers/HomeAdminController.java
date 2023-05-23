@@ -53,6 +53,7 @@ public class HomeAdminController implements Initializable {
             String formattedTotalMoney = decimalFormat.format(totalMoney);
             totalMoney_label.setText(formattedTotalMoney + "$");
 
+            mongoClient.close();
         } catch (Exception e){
             e.printStackTrace();
         }

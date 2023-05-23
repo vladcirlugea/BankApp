@@ -97,6 +97,8 @@ public class RegisterController implements Initializable {
                     .append("AccountBalance", 0.00)
                     .append("AccountType", "Client");
             collection.insertOne(doc);
+
+            mongoClient.close();
         } catch (Exception e){
             e.printStackTrace();
         }

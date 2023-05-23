@@ -1,7 +1,6 @@
 package com.bank.bankapp.Controllers;
 
 import com.bank.bankapp.Models.Transaction;
-import com.bank.bankapp.Models.UserSession;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerApi;
@@ -66,6 +65,8 @@ public class AddMoneyController implements Initializable {
             confirmation_label.setVisible(true);
             email_text_field.setText("");
             amount_text_field.setText("");
+
+            mongoClient.close();
         } catch(Exception e){
             e.printStackTrace();
         }

@@ -1,10 +1,5 @@
 package com.bank.bankapp.Models;
 
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
-
-import java.util.Random;
-
 public class UserSession {
     private static UserSession instance;
     private String userEmail;

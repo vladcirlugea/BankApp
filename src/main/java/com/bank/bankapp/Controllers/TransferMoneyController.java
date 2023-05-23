@@ -17,7 +17,6 @@ import org.bson.Document;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Random;
 import java.util.ResourceBundle;
 public class TransferMoneyController implements Initializable {
     public TextField email_text;
@@ -87,6 +86,7 @@ public class TransferMoneyController implements Initializable {
             email_text.setText("");
             amount_text.setText("");
 
+            mongoClient.close();
         } catch (Exception e){
             e.printStackTrace();
         }

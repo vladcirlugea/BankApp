@@ -27,6 +27,7 @@ public class LogInController implements Initializable {
     public Hyperlink notAClient_link;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        resetData();
         acc_selector.getItems().add("Client");
         acc_selector.getItems().add("Admin");
         login_button.setOnAction(event -> onLogIn());
@@ -74,6 +75,7 @@ public class LogInController implements Initializable {
             }else{
                 RegisterChecker.Alert("No Account Type", "Please select an account type");
             }
+            mongoClient.close();
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -92,5 +94,9 @@ public class LogInController implements Initializable {
             e.printStackTrace();
             return null;
         }
+    }
+    private void resetData() {
+        email_field.setText("");
+        password_field.setText("");
     }
 }

@@ -39,6 +39,7 @@ public class HomeController implements Initializable {
     private ObservableList<Transaction> transactions;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        resetData();
         String accEmail = UserSession.getInstance().getUserEmail();
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -110,9 +111,17 @@ public class HomeController implements Initializable {
                     };
                 }
             });
+            mongoClient.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private void resetData() {
+        user_name.setText("");
+        balance.setText("");
+        income_label.setText("");
+        expense_label.setText("");
+        transaction_list.getItems().clear();
     }
     private List<Transaction> getLatestTransactions(String accEmail) {
         List<Transaction> transactions = new ArrayList<>();
@@ -147,7 +156,6 @@ public class HomeController implements Initializable {
                 Transaction transaction = new Transaction(sender, receiver, amount, date, transactionId);
                 transactions.add(transaction);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
