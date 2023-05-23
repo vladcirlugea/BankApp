@@ -1,5 +1,10 @@
 package com.bank.bankapp.Models;
 
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
+import java.util.Random;
+
 public class UserSession {
     private static UserSession instance;
     private String userEmail;
@@ -15,11 +20,9 @@ public class UserSession {
     public void setUserEmail(String email) {
         userEmail = email;
     }
-
     public String getUserEmail() {
         return userEmail;
     }
-
     public void clearUserSession() {
         userEmail = null;
     }

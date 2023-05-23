@@ -1,5 +1,7 @@
 package com.bank.bankapp.Controllers;
 
+import com.bank.bankapp.Models.Transaction;
+import com.bank.bankapp.Models.UserSession;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerApi;
@@ -14,6 +16,7 @@ import javafx.scene.control.TextField;
 import org.bson.Document;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AddMoneyController implements Initializable {
@@ -37,6 +40,7 @@ public class AddMoneyController implements Initializable {
         try(var mongoClient = MongoClients.create(settings)){
             MongoDatabase database = mongoClient.getDatabase("BankApp");
             MongoCollection<Document> collection = database.getCollection("BankAppCollection");
+            MongoCollection<Document> transactionCollection = database.getCollection("Transactions");
 
             Document filter = new Document("Email", email);
             long count = collection.countDocuments(filter);
@@ -48,13 +52,20 @@ public class AddMoneyController implements Initializable {
             }
             Document update = new Document("$inc", new Document("AccountBalance", amount));
             collection.updateOne(filter, update);
+
+            Document transaction = new Document();
+            transaction.append("TransactionId", Transaction.getInstance().generateUniqueTransactionId(transactionCollection));
+            transaction.append("Sender", "Bank");
+            transaction.append("Receiver", email);
+            transaction.append("Amount", amount);
+            transaction.append("Date", LocalDate.now());
+            transactionCollection.insertOne(transaction);
+
             confirmation_label.setText("Money sent successfully!");
             confirmation_label.setStyle("-fx-text-fill: #32E320; -fx-font-family: 'Gill Sans MT'; -fx-font-weight: bold; -fx-font-size: 1.5em; -fx-alignment: center");
             confirmation_label.setVisible(true);
             email_text_field.setText("");
             amount_text_field.setText("");
-
-            mongoClient.close();
         } catch(Exception e){
             e.printStackTrace();
         }

@@ -1,7 +1,5 @@
 package com.bank.bankapp.Controllers;
 
-import com.bank.bankapp.Models.Client;
-import com.bank.bankapp.Models.Model;
 import com.bank.bankapp.Models.Transaction;
 import com.bank.bankapp.Models.UserSession;
 import com.mongodb.client.MongoCollection;
@@ -13,11 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -101,7 +97,7 @@ public class HomeController implements Initializable {
                                 try {
                                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/TransactionDetails.fxml"));
                                     AnchorPane transactionDetailsNode = loader.load();
-                                    TransactionDetailsController controller = (TransactionDetailsController) loader.getController();
+                                    TransactionDetailsController controller = loader.getController();
 
                                     controller.setTransactionDetails(item);
 
@@ -126,17 +122,20 @@ public class HomeController implements Initializable {
             MongoDatabase database = mongoClient.getDatabase("BankApp");
             MongoCollection<Document> collection = database.getCollection("Transactions");
 
-            List<Document> transactionDocuments = collection.find(
-                            new Document("$or",
-                                    List.of(
-                                            new Document("Sender", accEmail),
-                                            new Document("Receiver", accEmail)
+            List<Document> transactionDocuments = collection.aggregate(
+                    List.of(
+                            new Document("$match",
+                                    new Document("$or",
+                                            List.of(
+                                                    new Document("Sender", accEmail),
+                                                    new Document("Receiver", accEmail)
+                                            )
                                     )
-                            )
+                            ),
+                            new Document("$sort", new Document("Date", 1)),
+                            new Document("$limit", MAX_TRANSACTIONS)
                     )
-                    .sort(new Document("Date", -1))
-                    .limit(MAX_TRANSACTIONS)
-                    .into(new ArrayList<>());
+            ).into(new ArrayList<>());
 
             for (Document document : transactionDocuments) {
                 String sender = document.getString("Sender");
@@ -149,7 +148,6 @@ public class HomeController implements Initializable {
                 transactions.add(transaction);
             }
 
-            mongoClient.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

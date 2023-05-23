@@ -1,12 +1,9 @@
 package com.bank.bankapp.Controllers;
 
 import com.bank.bankapp.Models.Model;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 

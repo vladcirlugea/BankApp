@@ -1,8 +1,13 @@
 package com.bank.bankapp.Models;
 
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Transaction {
+    private static Transaction instance;
     private String id;
     private LocalDate date;
     private String sender;
@@ -16,6 +21,12 @@ public class Transaction {
         this.amount = amount;
         this.date = date;
         this.id = id;
+    }
+    public static Transaction getInstance() {
+        if (instance == null) {
+            instance = new Transaction("", "", 0, LocalDate.now(), "");
+        }
+        return instance;
     }
     public String getId(){
         return id;
@@ -31,5 +42,16 @@ public class Transaction {
     }
     public double getAmount() {
         return amount;
+    }
+    public String generateUniqueTransactionId(MongoCollection<Document> transactionsCollection) {
+        String transactionId;
+        Random random = new Random();
+        long count;
+        do {
+            int randomNumber = random.nextInt(900000) + 100000;
+            transactionId = "0" + randomNumber;
+            count = transactionsCollection.countDocuments(new Document("TransactionId", transactionId));
+        } while (count > 0);
+        return transactionId;
     }
 }

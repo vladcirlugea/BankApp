@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import org.bson.Document;
-import org.bson.conversions.Bson;
 
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -54,7 +53,6 @@ public class HomeAdminController implements Initializable {
             String formattedTotalMoney = decimalFormat.format(totalMoney);
             totalMoney_label.setText(formattedTotalMoney + "$");
 
-            mongoClient.close();
         } catch (Exception e){
             e.printStackTrace();
         }
