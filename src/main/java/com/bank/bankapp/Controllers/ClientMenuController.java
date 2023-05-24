@@ -13,7 +13,6 @@ public class ClientMenuController implements Initializable {
     public Button logout_button;
     public Button transfer_money_button;
     public Button account_details_button;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addListeners();
@@ -23,7 +22,7 @@ public class ClientMenuController implements Initializable {
         home_button.setOnAction(event -> onHome());
         transfer_money_button.setOnAction(event -> onTransfer());
         account_details_button.setOnAction(event -> onAccountDetails());
-        transactions_button.setOnAction(event -> onTransactionHistory());
+        transactions_button.setOnAction(event -> onTransactions());
     }
     private void onLogOut(){
         Stage stage = (Stage)logout_button.getScene().getWindow();
@@ -39,7 +38,7 @@ public class ClientMenuController implements Initializable {
     private void onAccountDetails(){
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Account Details");
     }
-    private void onTransactionHistory(){
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transaction History");
+    private void onTransactions(){
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
     }
 }

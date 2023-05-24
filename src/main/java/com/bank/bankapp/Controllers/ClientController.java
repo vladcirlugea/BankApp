@@ -14,7 +14,7 @@ public class ClientController implements Initializable {
             switch (newVal){
                 case "Transfer" -> client_parent.setCenter(Model.getInstance().getViewFactory().getTransferView());
                 case "Account Details" -> client_parent.setCenter(Model.getInstance().getViewFactory().getAccountDetailsView());
-                case "Transaction History" -> client_parent.setCenter(Model.getInstance().getViewFactory().getTransactionsHistory());
+                case "Transactions" -> client_parent.setCenter(Model.getInstance().getViewFactory().getTransactionsView());
                 default -> client_parent.setCenter(Model.getInstance().getViewFactory().getHomeView());
             }
         });
