@@ -28,8 +28,8 @@ public class LogInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         resetData();
-        acc_selector.getItems().add("Client");
-        acc_selector.getItems().add("Admin");
+        acc_selector.getItems().add("CLIENT");
+        acc_selector.getItems().add("ADMIN");
         login_button.setOnAction(event -> onLogIn());
         notAClient_link.setOnAction(event -> onRegister());
         error_label.setVisible(false);
@@ -75,7 +75,6 @@ public class LogInController implements Initializable {
             }else{
                 RegisterChecker.Alert("No Account Type", "Please select an account type");
             }
-            mongoClient.close();
         } catch(Exception e){
             e.printStackTrace();
         }
