@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -136,7 +137,8 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Revolut Fake");
+        stage.setTitle("MoneyMover");
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/com/bank/bankapp/Images/bank.png"))));
         stage.show();
     }
     public void closeStage(Stage stage){

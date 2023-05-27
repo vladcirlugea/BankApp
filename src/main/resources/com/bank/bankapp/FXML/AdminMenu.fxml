@@ -7,11 +7,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.AdminMenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="150.0" styleClass="main_container" stylesheets="@../CSS/ClientMenu.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.bankapp.Controllers.AdminMenuController">
     <AnchorPane prefHeight="470.0" prefWidth="130.0" styleClass="left_menu">
         <VBox prefHeight="100.0" prefWidth="110.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Revolut Fake" />
-            <FontAwesomeIconView glyphName="MONEY" size="30" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MoneyMover" />
+            <FontAwesomeIconView glyphName="BANK" size="30" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="~Admin~" />
         </VBox>
         <VBox prefHeight="300.0" prefWidth="100.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">

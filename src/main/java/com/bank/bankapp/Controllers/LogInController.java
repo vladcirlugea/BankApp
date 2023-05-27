@@ -28,8 +28,8 @@ public class LogInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         resetData();
-        acc_selector.getItems().add("Client");
-        acc_selector.getItems().add("Admin");
+        acc_selector.getItems().add("CLIENT");
+        acc_selector.getItems().add("ADMIN");
         login_button.setOnAction(event -> onLogIn());
         notAClient_link.setOnAction(event -> onRegister());
         error_label.setVisible(false);
@@ -49,12 +49,12 @@ public class LogInController implements Initializable {
                 if (userDocument != null) {
                     String hashedPassword = userDocument.getString("Password");
                     if (hashedPassword.equals(getHashedPassword(password))) {
-                        if (acc_selector.getValue().equals("Client")) {
+                        if (acc_selector.getValue().equals("CLIENT")) {
                             UserSession.getInstance().setUserEmail(email);
                             Stage stage = (Stage) login_button.getScene().getWindow();
                             Model.getInstance().getViewFactory().closeStage(stage);
                             Model.getInstance().getViewFactory().showClientWindow();
-                        } else if (acc_selector.getValue().equals("Admin")) {
+                        } else if (acc_selector.getValue().equals("ADMIN")) {
                             if (RegisterChecker.isBankEmail(email)) {
                                 Stage stage = (Stage) login_button.getScene().getWindow();
                                 Model.getInstance().getViewFactory().closeStage(stage);
