@@ -23,7 +23,7 @@
             <graphic>
                <FontAwesomeIconView glyphName="PLUS" size="25" />
             </graphic></Button>
-            <Button fx:id="search_button" mnemonicParsing="false" text="Search Client">
+            <Button fx:id="deposit_button" mnemonicParsing="false" text="Search Client">
             <graphic>
                <FontAwesomeIconView glyphName="SEARCH" size="25" />
             </graphic></Button>

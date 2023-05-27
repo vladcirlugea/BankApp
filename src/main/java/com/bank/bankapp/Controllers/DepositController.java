@@ -9,11 +9,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DepositController implements Initializable {
-    public TextField eAddress_fid;
     public Button search_btn;
     public ListView result_listview;
-    public TextField amount_fid;
     public Button deposit_btn;
+    public TextField amount_fld;
+    public TextField eAddress_fld;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

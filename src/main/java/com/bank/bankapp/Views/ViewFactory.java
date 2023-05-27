@@ -2,6 +2,7 @@ package com.bank.bankapp.Views;
 
 import com.bank.bankapp.Controllers.AdminController;
 import com.bank.bankapp.Controllers.ClientController;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,7 @@ public class ViewFactory {
     private final StringProperty adminSelectedMenuItem;
     private AnchorPane adminHomeView;
     private AnchorPane addMoneyView;
+    private AnchorPane depositView;
     public ViewFactory(){
         this.clientSelectedMenuItem = new SimpleStringProperty("");
         this.adminSelectedMenuItem = new SimpleStringProperty("");
@@ -92,6 +94,17 @@ public class ViewFactory {
             }
         }
         return addMoneyView;
+    }
+
+    public AnchorPane getDepositView(){
+        if(depositView == null){
+            try{
+                depositView =new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/Deposit.fxml")).load();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return depositView;
     }
     public void showLogInWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bank/bankapp/FXML/LogIn.fxml"));
